@@ -3,18 +3,21 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
+  return array[0]
 }
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
+  return array[array.length - 1]
 }
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
+  return array.length
 }
 
 
@@ -23,6 +26,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  let nuevoArray = []
+  for(var i = 0; i < array.length; i++) {
+    nuevoArray[i] = array[i] + 1;
+  }
+  return nuevoArray
 }
 
 
@@ -30,6 +38,8 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+  array.push(elemento)
+  return array
 }
 
 
@@ -38,6 +48,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+  array.unshift(elemento)
+  return array
 }
 
 
@@ -47,6 +59,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+  return palabras.join(' ');
 }
 
 
@@ -54,6 +67,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  return array.includes(elemento)
 }
 
 
@@ -61,6 +75,11 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+  let suma = 0
+  for (let index = 0; index < numeros.length; index++) {
+    suma = suma + numeros[index];    
+  }
+  return suma
 }
 
 
@@ -68,6 +87,13 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+  let suma = 0
+  let promedio = 0
+  for (let index = 0; index < resultadosTest.length; index++) {
+    suma = suma + resultadosTest[index];  
+  }
+  prmedio = suma / resultadosTest.length
+  return promedio
 }
 
 
@@ -75,6 +101,13 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  let maximo = numeros[0]
+  for (let index = 1; index < numeros.length; index++){
+    if(numeros[index] > maximo){
+     maximo = numeros[index]
+    }
+  }
+  return maximo
 }
 
 
@@ -105,6 +138,7 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  return n.toString()[0] === "9"
   
 }
 
@@ -113,7 +147,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  
+  let elemento = arreglo[0]
+  for (let index = 1; index < arreglo.length; index++) {
+    if(elemento === arreglo[index]){
+      return true
+    }
+  }
 } 
 
 
